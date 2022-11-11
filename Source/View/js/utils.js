@@ -1,6 +1,7 @@
 async function request(url, options={}) {
-    const baseURL = 'http://localhost/~aula/fabio-pw2/11.1-page';
+    const baseURL = location.href.split('/').slice(0,-1).join('/');
 
+    console.log()
     if (options.body) {
         options.body = new URLSearchParams(options.body).toString();
         options.headers = { 'Content-type': 'application/x-www-form-urlencoded' };
